@@ -46,14 +46,14 @@ Physical Device or Emulator
 git clone https://github.com/sanjanamali8/flutter_task
 cd flutter_task
 ```
-3. Install Flask
+2. Install Flask
 ```bash
 pip3 install flask
 ```
-4. Run the flask_backend.py file
-5. Install required flutter packages
+3. Run the flask_backend.py file
+4. Install required flutter packages
     flutter pub get
-6. Run the Frontend Flutter app through terminal or from IDE-
+5. Run the Frontend Flutter app through terminal or from IDE-
 ```bash
 flutter run
 ```
