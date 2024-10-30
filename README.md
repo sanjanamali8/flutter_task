@@ -19,15 +19,18 @@ Backend: Flask (with static data)
 
 # Folder Structure 
 
+```bash
 flutter_task/
 │
 ├── lib/
 │   ├── main.dart   # Main entry point for the Flutter app
-|   ├── backend/
-|   │   └── flask_backend.py  # Flask backend file with static data
+│   ├── backend/
+│   │   └── flask_backend.py  # Flask backend file with static data
 │   ├── controller/
 │   │   └── app_controller.dart # AppController managing app state and data fetching
 │   ├── data.dart               # DataScreen for displaying charts
+
+```
 
 # Prerequisites
 
@@ -39,16 +42,21 @@ Physical Device or Emulator
 # Setup
 
 1. Clone the repository
-    git clone https://github.com/sanjanamali8/flutter_task
-    cd flutter_task
-2. Install Flask
-    pip3 install flask
-3. Run the flask_backend.py file
-4. Install required flutter packages
+```bash
+git clone https://github.com/sanjanamali8/flutter_task
+cd flutter_task
+```
+3. Install Flask
+```bash
+pip3 install flask
+```
+4. Run the flask_backend.py file
+5. Install required flutter packages
     flutter pub get
-5. Run the Frontend Flutter app -
-    i. flutter run
-   ii. Run from IDE
+6. Run the Frontend Flutter app through terminal or from IDE-
+```bash
+flutter run
+```
 
 # Usage
 
