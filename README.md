@@ -34,10 +34,10 @@ flutter_task/
 
 # Prerequisites
 
-Flutter SDK
-Python 3.x
-Required Python packages: Flask
-Physical Device or Emulator
+1. Flutter SDK
+2. Python 3.x
+3. Required Python packages: Flask
+4. Physical Device or Emulator
 
 # Setup
 
