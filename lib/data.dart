@@ -11,6 +11,10 @@ class DataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    List<dynamic> radarData = controller.data['radar'] ?? [0];
+    dynamic max = radarData.isNotEmpty ? radarData.reduce((a, b) => a > b ? a : b): 1;
+    int tickCount = (max / 20).ceil();
     
     return Obx(() {
       List<FlSpot> lineChartData = [];
@@ -30,11 +34,17 @@ class DataScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const Text('Radar Chart'),
+            const Text('Radar Chart',
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold
+              ),
+            ),
             SizedBox(
               height: 200,
               child: RadarChart(
                 RadarChartData(
+                  tickCount: tickCount,
                   dataSets: [
                     RadarDataSet(
                       dataEntries: controller.data['radar']
@@ -48,7 +58,12 @@ class DataScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            const Text('Pie Chart'),
+            const Text('Pie Chart',
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold
+              ),
+            ),
             Expanded(
               child: PieChart(
                 PieChartData(
@@ -60,22 +75,27 @@ class DataScreen extends StatelessWidget {
                       color: Colors.blue.shade200,
                       title:
                           'Yes, ${controller.data['pie']['yes'].toDouble()}%',
-                      radius: 115,
-                      titlePositionPercentageOffset: 1.4,
+                      radius: 110,
+                      titlePositionPercentageOffset: 1.2,
                     ),
                     PieChartSectionData(
                       value: controller.data['pie']['no'].toDouble(),
                       color: Colors.blue,
                       title: 'No, ${controller.data['pie']['no'].toDouble()}%',
                       radius: 100,
-                      titlePositionPercentageOffset: 1.4,
+                      titlePositionPercentageOffset: 1.2,
                     ),
                   ],
                 ),
               ),
             ),
             const SizedBox(height: 16),
-            const Text('Line Chart'),
+            const Text('Line Chart',
+            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold
+              ),
+            ),
             SizedBox(
               height: 200,
               child: LineChart(

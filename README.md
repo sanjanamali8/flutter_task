@@ -46,13 +46,19 @@ flutter_task/
 git clone https://github.com/sanjanamali8/flutter_task
 cd flutter_task
 ```
-2. Install Flask
+2. Install Flask and flask-cors
 ```bash
 pip3 install flask
+pip3 install flask-cors
 ```
 3. Run the flask_backend.py file
 4. Install required flutter packages
     flutter pub get
+5. To run the app change the URL in app_controller.dart as follows -
+```bash
+Emulator - http://10.0.2.2:5001/get_data
+Web browser - http://localhost:5001/get_data
+```
 5. Run the Frontend Flutter app through terminal or from IDE-
 ```bash
 flutter run
