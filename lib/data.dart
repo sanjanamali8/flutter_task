@@ -14,7 +14,9 @@ class DataScreen extends StatelessWidget {
 
     List<dynamic> radarData = controller.data['radar'] ?? [0];
     dynamic max = radarData.isNotEmpty ? radarData.reduce((a, b) => a > b ? a : b): 1;
-    int tickCount = (max / 20).ceil();
+    dynamic min = radarData.isNotEmpty ? radarData.reduce((a, b) => a < b ? a : b): 1;
+    dynamic diff = max - min;
+    int tickCount = (diff / 20).ceil();
     
     return Obx(() {
       List<FlSpot> lineChartData = [];
